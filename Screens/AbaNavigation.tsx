@@ -4,7 +4,7 @@ import HomeScreen from './Home';
 import ClientesScreen from './Clientes';
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
-import RedeCaciqueScreen from './RedeCaciqueScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +35,7 @@ const AbaNavigation = () => {
         >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Clientes" component={ClientesScreen} />
-            <Tab.Screen name="Cacique" component={RedeCaciqueScreen}/>
+            
         </Tab.Navigator>
         </NavigationContainer>
     );

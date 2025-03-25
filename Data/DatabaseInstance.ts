@@ -1,27 +1,41 @@
-import SQLite from 'react-native-sqlite-storage';
+import Realm from "realm";
 
-SQLite.DEBUG(true);
-SQLite.enablePromise(true);
+// Definindo a classe Cliente
+class Cliente extends Realm.Object<Cliente> {
+  cnpj!: string;
+  RazaoSocial!: string;
+  NomeFantasia!: string;
+  NomePosto!: string;
 
-const database_name = "Cliente.db";
+  static schema: Realm.ObjectSchema = {
+    name: "Cliente",
+    properties: {
+      cnpj: "string",
+      RazaoSocial: "string",
+      NomeFantasia: "string",
+      NomePosto: "string",
+    },
+    primaryKey: "cnpj",
+  };
+}
 
-export const getDbConnection = async () => {
+
+ const getRealmInstance = async (): Promise<Realm> => {
   try {
-    console.log("Tentando abrir o banco de dados...");
+    console.log("Tentando abrir o banco de dados Realm...");
     
-    const db = await SQLite.openDatabase({
-      name: database_name,
-      location: 'default',
+    const realm = await Realm.open({
+      schema: [Cliente], 
+      schemaVersion: 1,  
     });
 
-    if (!db) {
-      throw new Error("Falha ao abrir o banco de dados. `db` retornou null.");
-    }
-
-    console.log("Banco de dados aberto com sucesso!");
-    return db;
+    console.log("Banco de dados Realm aberto com sucesso!");
+    return realm;
   } catch (error) {
-    console.error("Erro ao abrir o banco de dados:", error);
+    console.error("Erro ao abrir o banco de dados Realm:", error);
     throw error;
   }
 };
+
+
+export { Cliente, getRealmInstance };
