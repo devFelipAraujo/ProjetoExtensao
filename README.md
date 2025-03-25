@@ -1,3 +1,6 @@
+                                       PROJETO APPSRG
+DESCRIÇAO:
+
 Esse projeto foi desenvolvido com o propósito de demonstrar minhas habilidades de resolução de problemas e contribuir com soluções para a comunidade onde vivo.
 
 O aplicativo foi criado para atender à necessidade do meu gestor na empresa em que trabalho. Ele precisava de uma ferramenta tanto para dispositivos móveis quanto para desktop, com foco no controle e cadastro de clientes, incluindo informações como nome social, CNPJ e nome fantasia.
@@ -6,8 +9,13 @@ Além disso, estou desenvolvendo uma versão desktop do aplicativo que irá sinc
 
 Abaixo, seguem os prints das telas do app:
 
-Tela Inicial: https://prnt.sc/jqtBaoty0H_C
 
+PRINTS DAS TELAS:
+Tela Inicial: https://prnt.sc/jqtBaoty0H_C
+Tela de Cadastro e Visualização de Clientes Salvos: https://prnt.sc/mni77MilLjP9
+
+
+IMPLEMENTAÇAO:
 Segue codigo abaixo codigo para implementaçao do cadastro de cliente:
 
  const handleCadastro = async () => {
